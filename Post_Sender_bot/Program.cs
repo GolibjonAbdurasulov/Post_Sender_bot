@@ -1,3 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Hello, World!");
+using Post_Sender_bot.TelegramBot;
+
+TelegramBotService botService = new TelegramBotService();
+await botService.Start();

@@ -12,7 +12,7 @@ public class AuthController : ControllerBase
 {
     private readonly AuthService _authService;
     
-    public AuthController(AuthService authService, ControllerManager.ControllerManager controllerManager) : base(
+    public AuthController( ControllerManager.ControllerManager controllerManager,AuthService authService) : base(
         controllerManager)
     {
         _authService = authService;

@@ -5,7 +5,7 @@ namespace Post_Sender_bot.Services;
 
 public class UserService : BaseService<User>
 {
-    public UserService(RepositoryBase<User> repository) : base(repository)
+    public UserService(UserRepository repository) : base(repository)
     {
     }
 }

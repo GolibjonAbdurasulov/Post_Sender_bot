@@ -94,21 +94,23 @@ public static class KeyboardButtonExtensions
         return MakeDefaultReplyKeyboardMarkup(buttons);
      }
     
-    public static ReplyKeyboardMarkup MakeTeacherAttendanceSingleClassReplyKeyboardMarkup(this ControllerContext context)
+    public static ReplyKeyboardMarkup MakeUserDashboardReplyKeyboardMarkup(this ControllerContext context)
     {
         var buttons = new List<List<KeyboardButton>>()
         {
             new List<KeyboardButton>()
             {
-                new KeyboardButton("Darsga qatnashmaganlik xabari⛔️")
+                new KeyboardButton("Post qo'shish"),
+                new KeyboardButton("Postlar ro'yxatini olish"),
             },
             new List<KeyboardButton>()
             {
-                new KeyboardButton("Darsga kechikib kirganligi  xabari⚠️"),
+                new KeyboardButton("Postni tahrirlash"),
+                new KeyboardButton("Sozlamalar⚙️"),
             },
             new List<KeyboardButton>()
             {
-                new KeyboardButton("Ortga")
+                new KeyboardButton("Log out")
             }
         };
 

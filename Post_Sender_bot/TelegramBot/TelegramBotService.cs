@@ -23,18 +23,25 @@ public class TelegramBotService
 
     private ControllerManager.ControllerManager ControllerManager;
     private AuthService _authService;
+    private UserService _userService;
+    private SettingsService _settingsService;
     private SessionManager SessionManager;
 
     public TelegramBotService()
     {
-        _client = new TelegramBotClient(Settings.botToken);
         this.updateHandlers = new List<Func<ControllerContext, CancellationToken, Task>>();
-        UserRepository = new UserRepository(_dataContext);
-        _dataContext = new DataContext();
-        _authService = new AuthService(repository: UserRepository);
+        _client = new TelegramBotClient(Settings.botToken);
         SessionManager = new SessionManager();
+        _dataContext = new DataContext();
+
+        UserRepository = new UserRepository(_dataContext);
+
+
+        _userService = new UserService(UserRepository);
+        _authService = new AuthService( UserRepository);
+        _settingsService = new SettingsService(_userService);
         ControllerManager =
-            new ControllerManager.ControllerManager(_authService, SessionManager, repository: UserRepository);
+            new ControllerManager.ControllerManager(_authService,SessionManager,_settingsService);
     }
 
 

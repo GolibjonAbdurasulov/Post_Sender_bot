@@ -5,7 +5,7 @@ namespace Post_Sender_bot.Services;
 
 public class BaseService<T> where T : BaseEntity
 {
-    private RepositoryBase<T> _repository;
+    private protected RepositoryBase<T> _repository;
 
     public BaseService(RepositoryBase<T> repository)
     {

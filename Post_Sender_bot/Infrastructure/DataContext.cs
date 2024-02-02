@@ -6,6 +6,7 @@ namespace Post_Sender_bot.Infrastructure;
 public class DataContext : DbContext
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Post> Post { get; set; }
     public DataContext()
     {
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

@@ -10,8 +10,7 @@ public class Session
     public string Controller { get; set; }
     public long ChatId { get; set; }
     public LoginSessionModel LoginData { get; set; }
-    public byte LessonTime { get; set; }
-    public string? ClassNumber { get; set; }
+    public long ChannelId { get; set; }
     public string? InlineResultQueryId { get; set; }
     public User User { get; set; }
 }
